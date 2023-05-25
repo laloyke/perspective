@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+    <style>
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+body { background: white;
+font-family: 'Montserrat', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  
+}
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.btn-12{
+  position: relative;
+  right: 0%;
+  border: none;
+  box-shadow: none;
+  line-height: 42px;
+ -webkit-perspective: 230px;
+    
+}
+.btn-12 span {
+  background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgb(34 34 34) 0%, rgb(34 34 34) 100%);
+  display: block;
+  
+  width: 250px;
+  height: 130px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin: -131px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  COLOR: white;
+    font-family: 'Montserrat';
+    font-size: xx-large;
+    line-height: 125px;
+}
+.btn-12 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -66px;
+}
+.btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -66px;
+}
+.btn-12:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.btn-12:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+ color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+section { 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:90%;
+  max-width:800px;
+  margin:0 auto;
+  color:#222;
+  text-transform:uppercase;
+  font-size:2.8em;
+  font-weight:700;
+}
+.full { height:100vh; background:#E0E0E0;
+text-align: center;
+}
+.half { height:50vh; background:#E0E0E0;
+text-align: center;
+}
+.mini { height:25vh; background:#E0E0E0; 
+text-align: center;
+}
+
+.banner { color: #E8E8E8; 
+  display:flex;
+  align-items:stretch;
+}
+
+/* first banner */
+
+.banner3d-1 {
+    width:100%;
+    perspective: 700px;
+    -webkit-transform-style:flat; /* why would I do that? well there is a very strange bug with safari, and it fixed it... */
+    transform-style: preserve-3d;
+}
+
+.banner3d-1-front {
+    padding:50px;
+    background:#222;
+    transform: translatez(50px);
+    transform-style: preserve-3d;
+}
+
+.banner3d-1-front:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 50px;
+    background-color: #BFBFBF;
+    top: -50px;
+    transform-origin: center bottom;
+    transform: rotatex(90deg);
+}
+
+.banner3d-1-front:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 50px;
+    background-color: #BFBFBF;
+    bottom: -50px;
+    transform-origin: center top;
+    transform: rotatex(-90deg);
+}
+
+/* second banner */
+
+.banner3d-2 {
+    width:100%;
+    perspective: 700px;
+    -webkit-transform-style:flat;
+    transform-style: preserve-3d;
+  z-index:-1;
+}
+
+.banner3d-2-front {
+    padding:50px;
+    background:#222;
+    transform: translatez(-50px);
+    transform-style: preserve-3d;
+}
+
+.banner3d-2-front:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 50px;
+    background-color: #BFBFBF;
+    top: -50px;
+    transform-origin: center bottom;
+    transform: rotatex(-90deg);
+}
+
+.banner3d-2-front:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 50px;
+    background-color: #BFBFBF;
+    bottom: -50px;
+    transform-origin: center top;
+    transform: rotatex(90deg);
+}
+
+/* 3rd banner */
+
+.banner3d-3 {
+    width:50%;
+    perspective: 700px;
+    -webkit-transform-style:flat;
+    transform-style: preserve-3d;
+}
+
+.banner3d-3-front {
+    padding:100px 25px;
+    text-align:center;
+    background:#222;
+    transform: translatez(50px);
+    transform-style: preserve-3d;
+}
+
+.banner3d-3-front:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 50px;
+    background-color: #404040;
+    top: -50px;
+    transform-origin: center bottom;
+    transform: rotatex(90deg);
+}
+
+.banner3d-3-front:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 50px;
+    background-color: #404040;
+    bottom: -50px;
+    transform-origin: center top;
+    transform: rotatex(-90deg);
+}
+
+.image {
+  width:50%;
+  background:url(https://i.pinimg.com/originals/46/0b/b3/460bb30d89ab4f18476a0254c9c03d68.gif) no-repeat;
+  background-size:cover;
+  background-position:center;
+  box-shadow: inset 25px 0px 20px 10px rgba(0,0,0,0.41)
+}
+
+
+/* fourth banner */
+
+.banner3d-4 {
+    width:60%;
+    perspective: 700px;
+    -webkit-transform-style:flat;
+    transform-style: preserve-3d;
+  z-index:-1;
+}
+
+.banner3d-4-front {
+    padding:25px;
+    background:#222;
+    transform: translatez(-50px);
+    transform-style: preserve-3d;
+}
+
+.banner3d-4-front:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 50px;
+    background-color: #BFBFBF;
+    top: -50px;
+    transform-origin: center bottom;
+    transform: rotatex(-90deg);
+}
+
+.banner3d-4-front:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 50px;
+    background-color: #BFBFBF;
+    bottom: -50px;
+    transform-origin: center top;
+    transform: rotatex(90deg);
+}
+
+.image2 {
+  width:40%;
+  background:url(https://25.media.tumblr.com/98b43776546a9c58a44d4ed2455a6d31/tumblr_n1l6tcJxNA1sagk6do1_500.gif) no-repeat;
+  background-size:cover;
+  background-position:center center;
+  border:20px solid #E0E0E0;
+  box-sizing:border-box;
+}
+
+@media (max-width: 991px) {
+  section {
+    font-size:2em;
+  }
+  .banner {
+    flex-direction:column
+  }
+  .banner3d-3, .banner3d-4 {
+    width:100%
+  }
+  .image, .image2 {
+	  width:100%;
+	  height:300px;
+  }
+}
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <section class="full">
+        aşağı kaydır <br> 👇 </section>
+
+<section class="banner">
+  <div class="banner3d-1">
+    <div class="banner3d-1-front">
+      bu bir 3d banner çalışmasıdır<br>gsap<br>ve scrolltrigger kullandım
+    </div>
+  </div>
+</section>
+
+<section class="mini">kutu altına <br>kutu <br>falan</section>
+
+<section class="banner">
+  <div class="banner3d-2">
+    <div class="banner3d-2-front">
+      nasıl<br>beğendin mi ???
+    </div>
+  </div>
+</section>
+
+<section class="half">az daha kaydır <br> 👇 </section>
+
+<section class="banner">
+  <div class="banner3d-3">
+    <div class="banner3d-3-front">
+      aslında kutu<br>boyutları<br>aynı
+    </div>
+  </div>
+  <div class="image"></div>
+</section>
+
+<section class="half">sadece <br> farklı <br> perspektif <br> </section>
+
+<section class="banner">
+  <div class="image2"></div>
+  <div class="banner3d-4">
+    <div class="banner3d-4-front">
+      bu<br>arada<br>iş vermek <br> istersen <br> burdayım <br><img src="https://em-content.zobj.net/thumbs/160/apple/96/man-raising-hand-type-1-2_1f64b-1f3fb-200d-2642-fe0f.png" alt="el kadıran adam emoji">
+    </div>
+  </div>
+</section>
+
+<section class="full"><button class="custom-btn btn-12"><span><a href="https://laloyke.github.io/porfolio/">GEL 🫶</a></span><span>TIKLA  🖐️</span></button></section>
+    
+    
+
+
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js">
+    gsap.registerPlugin(ScrollTrigger);
+gsap.set(".banner3d-1", { perspectiveOrigin: "center -100vh"});
+gsap.set(".banner3d-2", { perspectiveOrigin: "center -100vh"});
+gsap.set(".banner3d-3", { perspectiveOrigin: "center -100vh"});
+gsap.set(".banner3d-4", { perspectiveOrigin: "left -100vh"});
+
+gsap.to(".banner3d-1", {
+  scrollTrigger: {
+    trigger: ".banner3d-1",
+    scrub: true,
+    start: "top bottom",
+    end: "bottom top"
+  },
+  perspectiveOrigin: "center 100vh", 
+  ease: "none"
+});
+
+gsap.to(".banner3d-2", {
+  scrollTrigger: {
+    trigger: ".banner3d-2",
+    scrub: true,
+    start: "top bottom",
+    end: "bottom top"
+  },
+  perspectiveOrigin: "center 100vh", 
+  ease: "none"
+});
+
+gsap.to(".banner3d-3", {
+  scrollTrigger: {
+    trigger: ".banner3d-3",
+    scrub: true,
+    start: "top bottom",
+    end: "bottom top"
+  },
+  perspectiveOrigin: "center 100vh", 
+  ease: "none"
+});
+
+gsap.to(".banner3d-4", {
+  scrollTrigger: {
+    trigger: ".banner3d-4",
+    scrub: true,
+    start: "top bottom",
+    end: "bottom top"
+  },
+  perspectiveOrigin: "left 100vh", 
+  ease: "none"
+});
+</script>
+<script>
+let body = document.body;
+
+
+    
+</script>
+</html>
